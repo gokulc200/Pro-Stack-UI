@@ -41,6 +41,19 @@
     font-size: 16px;
 }
 
+.users-container{
+    display: flex;
+    align-items: center;
+}
+
+.users-count{
+    border-radius: 70px;
+    background-color: #2d72e0;
+    padding-left: 5px;
+    color: #ffffff;
+    width: 15px;
+}
+
 .content-details-deep{
     display: flex;
     flex-direction: column;
@@ -205,4 +218,20 @@ table{
 .highlighted{
     background-color: rgb(70, 92, 232);
     color: #ffffff;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#prevButton{
+    margin-right: 5px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+#nextButton{
+    height: 30px;
+    border-radius: 6px;
 }

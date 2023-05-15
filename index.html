@@ -10,6 +10,7 @@
     ></script>
     <link rel="stylesheet" type="text/css" href="index.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index.js"></script>
     <title>UI Developer</title>
   </head>
   <body>
@@ -17,8 +18,8 @@
       <div class="left-portion">
         <div class="top-portion1">
           <img src="https://res.cloudinary.com/gokulc/image/upload/v1683991622/Screenshot_2023-05-13_205634_jb1all.png" class="company-logo"/>
-          <svg id="close-button" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"/></svg>
-          </div>
+          <svg id="close-button" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M44.8 155.826h149.234c-5.841-8.248-10.57-16.558-14.153-24.918C166.248 99.098 189.778 63.986 224 64c18.616.008 32.203 10.897 40 29.092 12.122 28.286 78.648 64.329 107.534 77.323 17.857 7.956 28.453 25.479 28.464 43.845l.002.001v171.526c0 11.812-8.596 21.897-20.269 23.703-46.837 7.25-61.76 38.483-123.731 38.315-2.724-.007-13.254.195-16 .195-50.654 0-81.574-22.122-72.6-71.263-18.597-9.297-30.738-39.486-16.45-62.315-24.645-21.177-22.639-53.896-6.299-70.944H44.8c-24.15 0-44.8-20.201-44.8-43.826 0-23.283 21.35-43.826 44.8-43.826zM440 176h48c13.255 0 24 10.745 24 24v192c0 13.255-10.745 24-24 24h-48c-13.255 0-24-10.745-24-24V200c0-13.255 10.745-24 24-24zm24 212c11.046 0 20-8.954 20-20s-8.954-20-20-20-20 8.954-20 20 8.954 20 20 20z"/></svg>  
+        </div>
         <div class="content-details">
           <svg
             height="20px"
@@ -98,7 +99,10 @@
               />
             </svg>
             <div class="content-description">
-              <p class="content-name">User Profile</p>
+              <div class="users-container">
+                <p class="content-name">User Profile</p>
+                <div class="users-count">5</div>
+              </div>
               <svg
                 height="10px"
                 width="10px"
@@ -341,243 +345,12 @@
                 </tbody>
               </table>
             </div>
-            
-            <button id="prevButton" disabled>Previous</button>
-            <button id="nextButton">Next</button>
+            <div class="buttons-container">
+              <button id="prevButton" disabled>Previous</button>
+              <button id="nextButton">Next</button>
+            </div>
         </div>
       </div>
     </div>
   </body>
-  <script>
-    $(document).ready(function() {
-      // Sample data for the rows
-      const rowData = [
-        [
-          { imageSrc: 'https://e7.pngegg.com/pngimages/415/765/png-clipart-user-profile-linkedin-netwerk-money-order-fulfillment-round-face-saving-expert.png', name: 'Amanda Harvey', email:'amanda@site.com', phone: '+1-202-555-0140', country:'United Kingdom', accountStatus:'Active', orders:3 },
-          {imageSrc: 'https://oliver-andersen.se/wp-content/uploads/2018/03/cropped-Profile-Picture-Round-Color.png', name: 'Anne Richard', email:'anne@site.com', phone: '+1-752-235-2353', country:'United States', accountStatus:'Disabled', orders:3 },
-          {imageSrc: 'https://sincerelyvictoriat.com/wp-content/uploads/2019/11/round-profile-picture-1-300x300.png', name: 'Bob Dean', email:'bob@site.com', phone: '+1-854-235-9755', country:'Austria', accountStatus:'Disabled', orders:3 },
-          {imageSrc: 'https://simg.nicepng.com/png/small/182-1829287_cammy-lin-ux-designer-circle-picture-profile-girl.png', name: 'Brian Halligan', email:'brian@site.com', phone: '+1-141-463-1512', country:'France', accountStatus:'Active', orders:3 },
-          {imageSrc: 'https://img.freepik.com/premium-vector/woman-avatar-profile-round-icon_24640-14042.jpg', name: 'Banda Zarvey', email:'banda@site.com', phone: '+1-452-789-9853', country:'Russia', accountStatus:'Disabled', orders:4 },
-          {imageSrc: 'https://p.kindpng.com/picc/s/394-3947019_round-profile-picture-png-transparent-png.png', name: 'Kenne Lichard', email:'kenne@site.com', phone: '+1-100-456-1025', country:'Norway', accountStatus:'Active', orders:2 },
-          {imageSrc: 'https://www.dell.org/wp-content/uploads/2022/01/KatieW.png', name: 'Kobe Lean', email:'kobe@site.com', phone: '+1-854-235-9755', country:'Austria', accountStatus:'Disabled', orders:1 },
-          {imageSrc: 'https://www.pngitem.com/pimgs/m/627-6275754_chad-profile-pic-profile-photo-circle-png-transparent.png', name: 'Zrian Balligan', email:'zrian@site.com', phone: '+1-456-259-4575', country:'Germany', accountStatus:'Active', orders:3 },
-        ],
-        [
-          {imageSrc: 'https://img.freepik.com/premium-vector/woman-avatar-profile-round-icon_24640-14042.jpg', name: 'Banda Zarvey', email:'banda@site.com', phone: '+1-452-789-9853', country:'Russia', accountStatus:'Disabled', orders:4 },
-          {imageSrc: 'https://p.kindpng.com/picc/s/394-3947019_round-profile-picture-png-transparent-png.png', name: 'Kenne Lichard', email:'kenne@site.com', phone: '+1-100-456-1025', country:'Norway', accountStatus:'Active', orders:2 },
-          {imageSrc: 'https://www.dell.org/wp-content/uploads/2022/01/KatieW.png', name: 'Kobe Lean', email:'kobe@site.com', phone: '+1-854-235-9755', country:'Austria', accountStatus:'Disabled', orders:1 },
-          {imageSrc: 'https://www.pngitem.com/pimgs/m/627-6275754_chad-profile-pic-profile-photo-circle-png-transparent.png', name: 'Zrian Balligan', email:'zrian@site.com', phone: '+1-456-259-4575', country:'Germany', accountStatus:'Active', orders:3 },
-          {imageSrc: 'https://e7.pngegg.com/pngimages/415/765/png-clipart-user-profile-linkedin-netwerk-money-order-fulfillment-round-face-saving-expert.png', name: 'Amanda Harvey', email:'amanda@site.com', phone: '+1-202-555-0140', country:'United Kingdom', accountStatus:'Active', orders:3 },
-          {imageSrc: 'https://oliver-andersen.se/wp-content/uploads/2018/03/cropped-Profile-Picture-Round-Color.png', name: 'Anne Richard', email:'anne@site.com', phone: '+1-752-235-2353', country:'United States', accountStatus:'Disabled', orders:3 },
-          {imageSrc: 'https://sincerelyvictoriat.com/wp-content/uploads/2019/11/round-profile-picture-1-300x300.png', name: 'Bob Dean', email:'bob@site.com', phone: '+1-854-235-9755', country:'Austria', accountStatus:'Disabled', orders:3 },
-          {imageSrc: 'https://simg.nicepng.com/png/small/182-1829287_cammy-lin-ux-designer-circle-picture-profile-girl.png', name: 'Brian Halligan', email:'brian@site.com', phone: '+1-141-463-1512', country:'France', accountStatus:'Active', orders:3 },
-        ],
-        [
-          {imageSrc: 'https://www.pngitem.com/pimgs/m/627-6275754_chad-profile-pic-profile-photo-circle-png-transparent.png', name: 'Amanda Harvey', email:'amanda@site.com', phone: '+1-202-555-0140', country:'United Kingdom', accountStatus:'Active', orders:3 },
-          {imageSrc: 'https://oliver-andersen.se/wp-content/uploads/2018/03/cropped-Profile-Picture-Round-Color.png', name: 'Anne Richard', email:'anne@site.com', phone: '+1-752-235-2353', country:'United States', accountStatus:'Disabled', orders:3 },
-          {imageSrc: 'https://simg.nicepng.com/png/small/182-1829287_cammy-lin-ux-designer-circle-picture-profile-girl.png', name: 'Bob Dean', email:'bob@site.com', phone: '+1-854-235-9755', country:'Austria', accountStatus:'Disabled', orders:3 },
-          {imageSrc: 'https://sincerelyvictoriat.com/wp-content/uploads/2019/11/round-profile-picture-1-300x300.png', name: 'Brian Halligan', email:'brian@site.com', phone: '+1-141-463-1512', country:'France', accountStatus:'Active', orders:3 },
-          {imageSrc: 'https://img.freepik.com/premium-vector/woman-avatar-profile-round-icon_24640-14042.jpg', name: 'Banda Zarvey', email:'banda@site.com', phone: '+1-452-789-9853', country:'Russia', accountStatus:'Disabled', orders:4 },
-          {imageSrc: 'https://p.kindpng.com/picc/s/394-3947019_round-profile-picture-png-transparent-png.png', name: 'Kenne Lichard', email:'kenne@site.com', phone: '+1-100-456-1025', country:'Norway', accountStatus:'Active', orders:2 },
-          {imageSrc: 'https://www.dell.org/wp-content/uploads/2022/01/KatieW.png', name: 'Kobe Lean', email:'kobe@site.com', phone: '+1-854-235-9755', country:'Austria', accountStatus:'Disabled', orders:1 },
-          {imageSrc: 'https://e7.pngegg.com/pngimages/415/765/png-clipart-user-profile-linkedin-netwerk-money-order-fulfillment-round-face-saving-expert.png', name: 'Zrian Balligan', email:'zrian@site.com', phone: '+1-456-259-4575', country:'Germany', accountStatus:'Active', orders:3 },
-        ],
-        // Add more array objects as needed
-      ];
-
-      let currentIndex = 0;
-      const maxIndex = rowData.length - 1;
-      let checkedCount = 0;
-
-      // Function to populate table rows
-      function populateTableRows(index) {
-        const tableBody = $('#tableBody');
-        tableBody.empty(); // Clear existing rows
-
-        const dataArray = rowData[index];
-
-        dataArray.forEach(function(data) {
-          const row = $('<tr>');
-          const cell1 = $('<td>');
-          const cell2 = $('<td>');
-          const cell3 = $('<td>');
-          const cell4 = $('<td>');
-          const cell5 = $('<td>');
-          const cell6 = $('<td>');
-            
-          // Create a checkbox element
-          const checkbox = $('<input>');
-          checkbox.attr('type', 'checkbox');
-
-          checkbox.click(function() {
-            if ($(this).prop('checked')) {
-              checkedCount++;
-            } else {
-              checkedCount--;
-            }
-            $('#checkedCount').text(checkedCount);
-          });
-
-          // Create an image input element
-          const imageInput = $('<input>');
-          imageInput.attr('type', 'image');
-          imageInput.attr('src', data.imageSrc);
-          imageInput.addClass('profile-logo');
-
-          // Create a span element for the name
-          const nameSpan = $('<span>').text(data.name);
-
-          const firstContainer = $('<div>');
-          firstContainer.addClass('first-container');
-          firstContainer.append(checkbox);
-          firstContainer.append(imageInput);
-          firstContainer.append(nameSpan);
-
-          // Create a span element for the email
-          const emailSpan = $('<span>').text(data.email);
-          
-          // Create a span element for the phone
-          const phoneSpan = $('<span>').text(data.phone);
-
-          // Create a span element for the country
-          const countrySpan = $('<span>').text(data.country);
-
-          // Create a span element for the account status
-          const accountStatusSpan = $('<span>').text(data.accountStatus);
-
-          // Create a span element for the orders
-          const orderSpan = $('<span>').text(data.orders);
-
-          cell1.append(firstContainer);
-          cell2.append(emailSpan);
-          cell3.append(phoneSpan);
-          cell4.append(countrySpan);
-          cell5.append(accountStatusSpan);
-          cell6.append(orderSpan);
-
-          // Append the cells to the row
-          row.append(cell1);
-          row.append(cell2);
-          row.append(cell3);
-          row.append(cell4);
-          row.append(cell5);
-          row.append(cell6);
-          // Append the row to the table body
-          tableBody.append(row);
-          
-        });
-      }
-
-      // Function to handle button clicks
-      function handleButtonClick() {
-        populateTableRows(currentIndex);
-
-        // Enable/disable buttons based on the current index
-        if (currentIndex === 0) {
-          $('#prevButton').prop('disabled', true);
-        } else {
-          $('#prevButton').prop('disabled', false);
-        }
-
-        if (currentIndex === maxIndex) {
-          $('#nextButton').prop('disabled', true);
-        } else {
-          $('#nextButton').prop('disabled', false);
-        }
-      }
-
-      function deleteCheckedRows() {
-        const checkedBoxes = $('#tableBody input[type="checkbox"]:checked');
-        checkedBoxes.each(function() {
-          $(this).closest('tr').remove();
-          checkedCount--;
-        });
-        $('#checkedCount').text(checkedCount);
-      }
-      // Initial population of the table
-      populateTableRows(currentIndex);
-
-      // Button click event handlers
-      $('#prevButton').click(function() {
-        $('#nextButton').removeClass('highlighted');
-        $(this).addClass('highlighted');
-        if (currentIndex > 0) {
-          currentIndex--;
-          handleButtonClick();
-        }
-      });
-
-      $('#nextButton').click(function() {
-        $('#prevButton').removeClass('highlighted');
-        $(this).addClass('highlighted');
-        if (currentIndex < maxIndex) {
-          currentIndex++;
-          handleButtonClick();
-        }
-      });
-
-      $('.delete-btn').click(function() {
-        deleteCheckedRows();
-      });
-
-      $('.add-btn').click(function() {
-        confirm("This Feature is available only for Prime customers!");
-      });
-
-      $('#close-button').click(function(){
-        $('.left-portion').hide();
-        $('.hide-portion').show();
-      })
-
-      $('.hide-portion').hide();
-
-      $('.hide-portion').click(function(){
-        $('.left-portion').show();
-        $('.hide-portion').hide();
-      })
-
-      $('.down-arrow').hide();
-
-      $('.dashboard-up').hide();
-      $('.pages-details').hide();
-
-      $('.dashboard-down').click(function(){
-        $('.pages-details').show();
-        $('.dashboard-down').hide();
-        $('.dashboard-up').show();
-      })
-
-      $('.dashboard-up').click(function(){
-        $('.pages-details').hide();
-        $('.dashboard-down').show();
-        $('.dashboard-up').hide();
-      })
-
-      $('.no-records-down-arrow').click(function(){
-        confirm("No records are available");
-      })
-
-      $('.records-down-arrow').click(function(){
-        confirm("You are viewing E-commerce records");
-      })
-
-      $('.up-arrow').click(function(){
-        $('.up-arrow').hide();
-        $('.down-arrow').show();
-        $('.account-details').hide();
-      })
-
-      $('.down-arrow').click(function(){
-        $('.up-arrow').show();
-        $('.down-arrow').hide();
-        $('.account-details').show();
-      })
-
-      $('.content-details').click(function(){
-        $('.content-details').removeClass('highlighted');
-        $(this).addClass('highlighted');
-      })
-    });
-
-  </script>
 </html>
